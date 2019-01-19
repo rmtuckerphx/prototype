@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype</title>
+  <link rel="stylesheet" href="web/main.css" />
+
+  <script src="https://cdn.jsdelivr.net/vue/1.0.24/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+  
+</head>
+<body>
+  <div id="editor">
+    <textarea v-model="input" debounce="300"></textarea>
+    <div v-html="input | marked"></div>
+  </div>
+</body>
+
+<script>
+  new Vue({
+    el: '#editor',
+    data: {
+      input: '# hello',
+    },
+    filters: {
+      marked: marked,
+    },
+  });
+</script>
