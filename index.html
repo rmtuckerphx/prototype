@@ -10,7 +10,8 @@
     <div v-text="reversedText"></div>
   </div>
 
-  <script src="dist.browser/index.js"></script>
+  <!-- <script src="dist.browser/index.js"></script> -->
+  <script src="web/reverse2.js"></script>
   <script src="https://cdn.jsdelivr.net/vue/1.0.24/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
 
@@ -23,7 +24,7 @@
       computed: {
         reversedText: {
           get: function() {
-            return reverse(this.input);
+            return reverse2(this.input);
           },
           // set: function(newValue) {
           //   this.input = reverse(newValue);
