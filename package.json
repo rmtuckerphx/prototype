@@ -1,0 +1,25 @@
+{
+  "name": "prototype-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "dist.browser"
+  ],  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && tsc -p tsconfig.browser.json",
+    "start": "npm run serve",
+    "serve": "node dist/server.js",
+    "watch-node": "nodemon dist/server.js",
+    "watch-ts": "tsc -w"    
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4"
+  }
+}
