@@ -3,33 +3,33 @@
   <meta charset="utf-8" />
   <title>Prototype</title>
   <link rel="stylesheet" href="web/main.css" />
-
-  <script src="https://cdn.jsdelivr.net/vue/1.0.24/vue.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
-  <script src="dist.browser/index.js"></script>
 </head>
 <body>
   <div id="editor">
     <textarea v-model="input" debounce="300"></textarea>
     <div v-text="reversedText"></div>
   </div>
-</body>
 
-<script>
-  new Vue({
-    el: '#editor',
-    data: {
-      input: '',
-    },
-    computed: {
-      reversedText: {
-        get: function() {
-          return  reverse(this.input);
-        },
-        // set: function(newValue) {
-        //   this.input = reverse(newValue);
-        // },
+  <script src="dist.browser/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/vue/1.0.24/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+
+  <script>
+    new Vue({
+      el: '#editor',
+      data: {
+        input: '',
       },
-    },
-  });
-</script>
+      computed: {
+        reversedText: {
+          get: function() {
+            return reverse(this.input);
+          },
+          // set: function(newValue) {
+          //   this.input = reverse(newValue);
+          // },
+        },
+      },
+    });
+  </script>
+</body>
