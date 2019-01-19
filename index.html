@@ -7,12 +7,11 @@
   <script src="https://cdn.jsdelivr.net/vue/1.0.24/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
   <script src="dist.browser/index.js"></script>
-
 </head>
 <body>
   <div id="editor">
     <textarea v-model="input" debounce="300"></textarea>
-    <div v-html="input | marked"></div>
+    <div v-text="reversedText"></div>
   </div>
 </body>
 
@@ -20,10 +19,17 @@
   new Vue({
     el: '#editor',
     data: {
-      input: '# hello',
+      input: '',
     },
-    filters: {
-      marked: marked,
+    computed: {
+      reversedText: {
+        get: function() {
+          return  reverse(this.input);
+        },
+        // set: function(newValue) {
+        //   this.input = reverse(newValue);
+        // },
+      },
     },
   });
 </script>
